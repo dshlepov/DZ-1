@@ -5,15 +5,16 @@ utils = StringUtils()
 
 
 """capitalize"""
-def test_capitalize():
-    """POSITIVE"""
-    assert utils.capitilize("skypro") == "Skypro"
-    assert utils.capitilize("hello world") == "Hello world"
-    assert utils.capitilize("123") == "123"
-    """NEGATIVE"""
-    assert utils.capitilize("") == ""
-    assert utils.capitilize(" ") == " "
-    assert utils.capitilize("12345тест") == "12345тест"
+@pytest.mark.parametrize("input_string, expected_output", [
+("skypro", "Skypro"),
+("hello world", "Hello world"),
+("123", "123"),
+("", ""),
+("  ", "  "),
+("12345тест", "12345тест"),
+])
+def test_capitalize(input_string, expected_output):
+    assert utils.capitilize(input_string) == expected_output
 
 
 """trim"""
