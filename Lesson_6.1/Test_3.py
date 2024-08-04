@@ -3,7 +3,7 @@ from configuration  import *
 
 def test_shop_from(chrom_browser):
     chrom_browser.get(URL_3)
-    chrom_browser.find_element(By.ID, "user-name").send_keys("standsrd_user")
+    chrom_browser.find_element(By.ID, "user-name").send_keys("standard_user")
     chrom_browser.find_element(By.ID, "password").send_keys("secret_sauce")
     chrom_browser.find_element(By.ID, "login-button").click()
     chrom_browser.find_element(By.ID, "add-to-cart-sauce-labs-backpack").click()
