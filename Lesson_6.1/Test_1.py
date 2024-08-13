@@ -18,7 +18,7 @@ def test_data_types_from(chrome_browser):
     chrome_browser.find_element(By.NAME, "job-position").send_keys(job_position)
     chrome_browser.find_element(By.NAME, "company").send_keys(company)
 
-    WebDriverWait(chrome_browser, 40, 0.1).until(EC.element_to_be_clickable((By.TAG_NAME, "button")))
+    WebDriverWait(chrome_browser, 40, 0.1).until(EC.element_to_be_clickable((By.TAG_NAME, "Submit")))
     sleep(2)
 
     assert "danger" in chrome_browser.find_element(By.ID, "zip-code").get_attribute("class")
