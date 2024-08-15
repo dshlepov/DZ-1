@@ -12,7 +12,8 @@ class MainPage:
     def fill_fields(self, v_dict: dict):
         for key, value in v_dict.items():
             selector = f'[name={key}]'
-            self.browser.find_element(By.CSS_SELECTOR, selector).send_keys(value)
+            self.browser.find_element(By.CSS_SELECTOR, selector) if element:
+                 element.send_keys(value)
 
     def click_submit(self):
         self.browser.find_element(By.CSS_SELECTOR, '[type="submit"]').click()
