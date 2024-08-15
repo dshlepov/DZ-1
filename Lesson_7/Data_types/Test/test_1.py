@@ -1,5 +1,5 @@
 import pytest
-from Lesson_7.Data_pypes.Pages.MainPage import MainPage # type: ignore
+from Lesson_7.Data_types.Pages.MainPage import MainPage # type: ignore
 
 values_dict = {'first-name': 'Иван', 'last-name': 'Петров', 'address': 'Ленина, 55-3',
                 'e-mail': 'test@skypro.com', 'city': 'Москва', 'country': 'Россия',
@@ -13,7 +13,7 @@ fields_to_test_success = [
 
 
 @pytest.fixture(scope="function")
-def setup_from(chrone_browser):
+def setup_from(chrome_browser):
     main_page = MainPage(chrone_browser)
     main_page.open()
     main_page.fill_fields(values_dict)
