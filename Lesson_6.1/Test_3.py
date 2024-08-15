@@ -1,7 +1,7 @@
 from selenium.webdriver.common.by import By
 from configuration  import *
 
-def test_shop_from(chrom_browser):
+def test_shop_form(chrom_browser):
     chrom_browser.get(URL_3)
     chrom_browser.find_element(By.ID, "user-name").send_keys("standard_user")
     chrom_browser.find_element(By.ID, "password").send_keys("secret_sauce")
