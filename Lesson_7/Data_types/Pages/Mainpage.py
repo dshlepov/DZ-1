@@ -7,7 +7,7 @@ class MainPage:
         self.url = url
 
     def open(self):
-        self.browser.get(self.yrl)
+        self.browser.get(self.url)
 
     def fill_fields(self, v_dict: dict):
         for key, value in v_dict.items():
