@@ -7,7 +7,7 @@ class Productspage:
     def add_to_cart(self):
         self.browser.find_element(By.CSS_SELECTOR, '#add-to-cart-sauce-labs-backpack').click()
         self.browser.find_element(By.CSS_SELECTOR, '#add-to-cart-sauce-labs-bolt-t-shirt').click()
-        self.browser.find_element(By.CSS_SELECTOR, '#add-to-cart-sauce_labs-onesie').click()
+        self.browser.find_element(By.CSS_SELECTOR, '#add-to-cart-sauce-labs-onesie').click()
     
     def go_to_cart(self):
         self.browser.find_element(By.CSS_SELECTOR, '.shopping_cart_link').click()
