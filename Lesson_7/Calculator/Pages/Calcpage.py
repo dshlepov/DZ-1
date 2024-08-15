@@ -10,8 +10,8 @@ class Calcpage:
     def open(self):
         self.browser.get(URL_2)
     
-    def set_belay(self, delay):
-        delay_field = self.browser.find_element(By.CSS_SELECTOR< '#delay')
+    def set_delay(self, delay):
+        delay_field = self.browser.find_element(By.CSS_SELECTOR, '#delay')
         delay_field.clear()
         delay_field.send_keys(delay)
 
@@ -20,9 +20,9 @@ class Calcpage:
             self.browser.find_element(By.XPATH, f'//span[text()="{val}"]').click()
     
     def wait_result(self, delay, result):
-        wainter = WebDriverWait(self.browser, delay +1)
+        wainter = WebDriverWait(self.browser, waiter +1)
         wainter.until(EC.text_to_be_present_in_element((By.CSS_SELECTOR, 'screen'), str(result)))
     
     def result_text(self):
-        result = self.browser.find_element(By.CSS_SELECTOR, '.screnn')
+        result = self.browser.find_element(By.CSS_SELECTOR, '.screen')
         return result.text
