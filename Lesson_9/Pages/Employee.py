@@ -1,11 +1,11 @@
 import requests # type: ignore
 import json
-from Lesson_9.conftest import X_client_URL
+from Lesson_9.conftest import url
 
 path = '/employee/'
 
 class Company:
-    def __init__(self, url=X_client_URL):
+    def __init__(self, url=url):
         self.url = url
 
     def create(self, token: str, body: json):
@@ -21,7 +21,7 @@ class Company:
         return response.json()[-1]['id']
 
 class Employer:
-    def __init__(self, url=X_client_URL):
+    def __init__(self, url=url):
         self.url = url
     
     def get_list(self, company_id: int):
