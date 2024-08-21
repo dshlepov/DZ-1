@@ -4,22 +4,6 @@ from Lesson_9.conftest import url
 
 path = '/employee/'
 
-class Company:
-    def __init__(self, url=url):
-        self.url = url
-
-    def create(self, token: str, body: json):
-        headers = {'x-client-token': token}
-        response = requests.post(
-            self.url + '/company', headers=headers, params=body)
-        return response.json()
-    
-    def last_active_company_id(self):
-        active_params = {'active': 'true'}
-        response = requests.get(
-            self.url + '/company', params=active_params)
-        return response.json()[-1]['id']
-
 class Employer:
     def __init__(self, url=url):
         self.url = url
