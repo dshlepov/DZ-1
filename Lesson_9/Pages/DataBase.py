@@ -1,4 +1,4 @@
-from sqlalchmy import create_engine, text # type: ignore
+from sqlalchemy import create_engine, text
 
 class DataBase:
     query = {
