@@ -11,7 +11,7 @@ def test_get_list_of_employers():
     max_id = db.last_company_id()
     db.create_employer(max_id, "Dmitry", "Shikov", "89998765432")
     db_employer_list = db.gett_list_employer(max_id)
-    api_employer_list =  api.get_list(max_id)
+    api_employer_list = api.get_list(max_id)
     assert len(db_employer_list) == len(api_employer_list)
     response = (api.get_list(max_id))[0]
     employer_id = response["id"]
@@ -46,11 +46,11 @@ def test_assertion_data():
 def test_update_user_info():
     db.create_company('New updating company', 'test')
     max_id = db.last_company_id()
-    db.create_employer(max_id, "Dmitry", "Shikov", "89998765432")
+    db.create_employer(max_id, "Victor", "Shikov", "89998765432")
     employer_id = db.get_employer_id(max_id)
-    db.update_employer_info("Victor", employer_id)
+    db.update_employer_info("Dmitry", employer_id)
     get_api_info = (api.get_info(employer_id)).json()
-    assert get_api_info["firstName"] == "Victor"
+    assert get_api_info["firstName"] == "Dmitry"
     assert get_api_info["lastName"] == "Shikov"
     assert get_api_info["isActive"] == True
     db.delete_employer(employer_id)
