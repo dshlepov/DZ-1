@@ -2,7 +2,7 @@ from sqlalchemy import create_engine, text
 
 class DataBase:
     query = {
-        'create_company': text('insert into company (name, description) values (:name, : description)'),
+        'create_company': text('insert into company (name, description) values (:name, :description)'),
         'max_company_id': text('select MAX(id) from company'),
         'delete_company': text('delete from company where id = :company_id'),
         'list_SELECT': text('select * from employee where company_id = :id'),
@@ -74,7 +74,7 @@ class DataBase:
         try:
             with self.db.connect() as connection:
                 result = connection.execute(self.query['item_INSERT'], parameters=dict(id=company_id, name=first_name, surname=last_name,
-                                                                                       phone_num=phone))
+                                                                                    phone_num=phone))
                 connection.commit()
                 return result
         except Exception as _ex:
@@ -114,7 +114,7 @@ class DataBase:
     def delete_employer(self, id: int):
         try:
             with self.db.connect() as connection:
-                result = connection.execute(self.query['item_DELETE'], parameters=dict(id_selete=id))
+                result = connection.execute(self.query['item_DELETE'], parameters=dict(id_delete=id))
                 connection.commit()
                 return result
         except Exception as _ex:

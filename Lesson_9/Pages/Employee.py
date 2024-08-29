@@ -1,4 +1,4 @@
-import requests # type: ignore
+import requests
 import json
 from Lesson_9.conftest import url
 
