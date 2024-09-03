@@ -1,6 +1,7 @@
 from Lesson_7.Calculator.Pages.Calcpage import Calcpage
 import allure
 
+@allure.epic("Calculator")
 @allure.severity(severity_level='normal')
 @allure.title("Работа калькулятора")
 @allure.description("Поиск полей, ввод данных и вывод результата вычисления")
