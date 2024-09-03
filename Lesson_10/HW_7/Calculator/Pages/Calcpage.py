@@ -26,7 +26,7 @@ class Calcpage:
     @allure.step("Ожидаем результат вычисления")
     def wait_result(self, delay, result):
         wainter = WebDriverWait(self.browser, delay +1)
-        wainter.until(EC.text_to_be_present_in_element((By.CSS_SELECTOR, 'screen'), str(result)))
+        wainter.until(EC.text_to_be_present_in_element((By.CSS_SELECTOR, '.screen'), str(result)))
 
     @allure.step("Возвращаем полученный результат в текстовом формате")
     def result_text(self):
